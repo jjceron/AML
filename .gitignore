@@ -1,0 +1,7 @@
+# Ignorar todo por defecto
+*
+
+# No ignorar estas excepciones
+!.gitignore
+!project/main.pdf
+!*.ipynb
