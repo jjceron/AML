@@ -1,7 +1,20 @@
-# Ignorar todo por defecto
-*
+# Ignorar entornos virtuales y dependencias
+.venv/
+__pycache__/
+*.pyc
 
-# No ignorar estas excepciones
-!.gitignore
+# Ignorar LaTeX intermedios
+build/
+*.aux
+*.log
+*.out
+*.toc
+
+# Ignorar config internos
+config/
+content/
+tikz/
+
+# Mantener PDF final y notebooks
 !project/main.pdf
 !*.ipynb
