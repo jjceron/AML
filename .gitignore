@@ -1,0 +1,20 @@
+# Ignorar todo por defecto
+*
+
+# Permitir el propio .gitignore
+!.gitignore
+
+# Incluir notebook raíz
+!01.ipynb
+
+# Incluir PDF compilado
+!project/build/main.pdf
+
+# Incluir clase LaTeX
+!project/config/report_type.cls
+
+# Incluir todo lo de content/
+!project/content/*.tex
+
+# Incluir todo lo de tikz/
+!project/tikz/*.tex
