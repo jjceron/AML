@@ -26,4 +26,4 @@
 !project/content/*.tex
 
 # Keep all .tex files in tikz/
-!project/tikz/*.tex
+!project/tikz/*.tex 
