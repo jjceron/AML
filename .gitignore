@@ -4,6 +4,9 @@
 # Do not ignore this file
 !.gitignore
 
+# Allow project folder (so we can un-ignore files inside)
+!project/
+
 # Keep the root notebook
 !01.ipynb
 
