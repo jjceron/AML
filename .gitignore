@@ -1,10 +1,10 @@
 # Ignore everything by default
 *
 
-# Do not ignore this file
+# Always keep this file
 !.gitignore
 
-# Allow project folder (so we can un-ignore files inside)
+# Allow the project folder so we can un-ignore specific files inside
 !project/
 
 # Keep the root notebook
@@ -17,7 +17,7 @@
 !project/config/report_type.cls
 
 # Keep all .tex files in content/
-!project/content/*.tex
+!project/content/
 
 # Keep all .tex files in tikz/
-!project/tikz/*.tex
+!project/tikz/
