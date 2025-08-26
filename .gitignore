@@ -7,17 +7,17 @@
 # Allow project folder (so we can un-ignore files inside)
 !project/
 
-# # Keep the root notebook
-# !01.ipynb
+# Keep the root notebook
+!01.ipynb
 
-# # Keep the compiled PDF
-# !project/build/main.pdf
+# Keep the compiled PDF
+!project/build/main.pdf
 
-# # Keep the custom LaTeX class
-# !project/config/report_type.cls
+# Keep the custom LaTeX class
+!project/config/report_type.cls
 
-# # Keep all .tex files in content/
-# !project/content/*.tex
+# Keep all .tex files in content/
+!project/content/*.tex
 
-# # Keep all .tex files in tikz/
-# !project/tikz/*.tex
+# Keep all .tex files in tikz/
+!project/tikz/*.tex
