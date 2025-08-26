@@ -1,7 +1,6 @@
 # Advanced Machine Learning (AML)
 
-This repository collects experiments, code, and materials developed while following the **Advanced Machine Learning** course.  
-It explores both classical and modern approaches in machine learning, with emphasis on probabilistic modeling, generative methods, and sequential data analysis.  
+This repository collects experiments, code, and materials developed while following the **Advanced Machine Learning** course. It explores both classical and modern approaches in machine learning, with emphasis on probabilistic modeling, generative methods, and sequential data analysis.  
 
 ## Course Objectives
 
