@@ -1,20 +1,20 @@
-# Ignorar entornos virtuales y dependencias
-.venv/
-__pycache__/
-*.pyc
+# Ignorar todo por defecto
+*
 
-# Ignorar LaTeX intermedios
-build/
-*.aux
-*.log
-*.out
-*.toc
+# Permitir el propio .gitignore
+!.gitignore
 
-# Ignorar config internos
-config/
-content/
-tikz/
+# Incluir notebook raíz
+!01.ipynb
 
-# Mantener PDF final y notebooks
+# Incluir PDF compilado
 !project/build/main.pdf
-!*.ipynb
+
+# Incluir clase LaTeX
+!project/config/report_type.cls
+
+# Incluir todo lo de content/
+!project/content/*.tex
+
+# Incluir todo lo de tikz/
+!project/tikz/*.tex
