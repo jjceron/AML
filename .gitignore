@@ -9,8 +9,8 @@
 
 # Allow subfolders explicitly so exceptions inside them work
 !project/build/
-!project/build/content/*.tex
-!project/build/tikz/*.tex
+!project/build/content/**/*.tex
+!project/build/tikz/**/*.tex
 !project/config/
 
 # Keep the root notebook
