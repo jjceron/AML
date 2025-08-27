@@ -7,11 +7,11 @@
 # Allow project folder
 !project/
 
-# Allow build folder but ignore its contents by default
+# Allow build but ignore its contents by default
 !project/build/
 project/build/*
 
-# Allow only specific subfolders inside build
+# Allow only these subfolders inside build (recursively)
 !project/build/content/**
 !project/build/tikz/**
 
@@ -21,6 +21,6 @@ project/build/*
 # Keep the compiled PDF
 !project/build/main.pdf
 
-# Keep the config folder
+# Keep the custom LaTeX class and config
 !project/config/
 !project/config/report_type.cls
