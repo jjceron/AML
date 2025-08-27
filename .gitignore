@@ -7,11 +7,13 @@
 # Allow project folder
 !project/
 
-# Allow subfolders explicitly so exceptions inside them work
+# Allow build folder but ignore its contents by default
 !project/build/
-!project/build/content/**/*.tex
-!project/build/tikz/**/*.tex
-!project/config/
+project/build/*
+
+# Allow only specific subfolders inside build
+!project/build/content/**
+!project/build/tikz/**
 
 # Keep the root notebook
 !01.ipynb
@@ -19,5 +21,6 @@
 # Keep the compiled PDF
 !project/build/main.pdf
 
-# Keep the custom LaTeX class
+# Keep the config folder
+!project/config/
 !project/config/report_type.cls
