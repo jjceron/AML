@@ -10,8 +10,6 @@
 # Allow subfolders explicitly so exceptions inside them work
 !project/build/
 !project/config/
-!project/content/
-!project/tikz/
 
 # Keep the root notebook
 !01.ipynb
