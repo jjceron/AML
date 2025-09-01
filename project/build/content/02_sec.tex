@@ -1,0 +1,51 @@
+%%%%%%%%%% 25/08
+% \textcolor{red}{Clase: 25/08/205}
+
+\section{Clustering}
+
+% content
+% K-means algorithm
+% Expectation-Maximization for Gaussian Mixture
+
+En este módulo, estudiamos modelos de aprendizaje no supervisado. Esto significa que nuestros conjuntos de datos no contienen etiquetas. Por lo tanto, tenemos un conjunto de datos que consiste únicamente en atributos de entrada \([x_1,x_2,...,x_N]\), donde cada \(x_i \in \mathbb{R}^P\). El objetivo es asignar cada muestra \(x\) a uno de los \(K\) clústeres.
+
+\begin{figure}[h]
+  \centering
+  \newcommand{\figscale}{1.35} 
+  \scalebox{\figscale}{\input{tikz/fig_03.tex}}
+\end{figure}
+
+\subsection{Fundamentos de \texorpdfstring{\(K\)}{K}-means}
+Los grupos se eligen de manera que la distancia entre puntos dentro del mismo grupo sea menor que la distancia entre puntos en diferentes grupos. Para lograr esto, es útil definir el vector \(\boldsymbol{\mu}_{k}\in\mathbb{R}^{P}\), que representa el centro del \(k\)-ésimo grupo. De esta manera, fijamos un conjunto de vectores \({\boldsymbol{\mu}_{k}}_{k=1}^{K}\) tal que la suma de las distancias desde cada punto a su \(\mu_{k}\) más cercano sea lo más pequeña posible.
+
+\begin{figure}[h]
+    \centering
+    \newcommand{\figscale}{1.35}
+    \scalebox{\figscale}{\input{tikz/fig_04.tex}}
+\end{figure}
+
+Para cada muestra \(x_n\), definimos un vector binario \(r_n\), compuesto por \(K\) valores \(r_{nk}\), donde \(r_{nk} = 1\) si la instancia \(x_n\) pertenece al grupo \(k\), y \(r_{nk}=0\) en caso contrario. Cabe destacar que cada muestra \(x_n\) solo puede pertenecer a uno de los \(K\) grupos. Por ejemplo, si \(K=4\) grupos y la instancia \(x_n\) pertenece al grupo 3, el vector \(r_n\) será \(r_n = [0,0,1,0]\).
+
+%%%%==== the part above but Spanish, plain text, scientific and following the document context 
+
+El objetivo es encontrar los valores de \(r_{nk}\) y \(\boldsymbol{\mu}_{k}\) que minimicen la distancia entre cada punto \(x_{n}\) y su centro correspondiente \(\mu_{k}\). Matemáticamente, esto se expresa como la minimización de la siguiente función objetivo:
+
+\[
+J(\boldsymbol{\mu},\boldsymbol{r}) = \sum_{n=1}^{N} \sum_{k=1}^{K} r_{nk} \| \boldsymbol{x}_n - \boldsymbol{\mu}_k \|^2
+\]
+
+% disadvantages of K-means
+
+\subsection{Modelos de Mezcla Gaussiana (GMM)}
+
+Los Modelos de Mezcla Gaussiana (GMM) son una extensión del algoritmo \(K\)-means. En lugar de asignar cada punto a un solo clúster, GMM permite que cada punto tenga una probabilidad de pertenecer a cada clúster. Esto se logra modelando los datos como una mezcla de varias distribuciones gaussianas.
+
+Cada clúster \(k\) se representa mediante una distribución gaussiana con media \(\boldsymbol{\mu}_k\) y covarianza \(\boldsymbol{\Sigma}_k\). La probabilidad de que un punto \(x_n\) pertenezca al clúster \(k\) se calcula utilizando la función de densidad de la distribución gaussiana:
+
+\[
+p(\boldsymbol{x}) = \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}
+)=\frac{1}{(2\pi)^{P} |\boldsymbol{\Sigma}_k|^{1/2}} \exp\left(-\frac{1}{2} (\boldsymbol{x} - \boldsymbol{\mu})^\mathsf{T} \boldsymbol{\Sigma}^{-1} (\boldsymbol{x} - \boldsymbol{\mu})\right),
+\]
+
+
+
