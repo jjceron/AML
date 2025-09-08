@@ -11,6 +11,7 @@
 
 \RequirePackage{amsmath}
 \let\openbox\relax     
+\RequirePackage[ruled,vlined]{algorithm2e}
 \RequirePackage{amsthm}
 \RequirePackage{enumitem}
 \RequirePackage{tasks}

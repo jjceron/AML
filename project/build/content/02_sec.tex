@@ -34,7 +34,26 @@ El objetivo es encontrar los valores de \(r_{nk}\) y \(\boldsymbol{\mu}_{k}\) qu
 J(\boldsymbol{\mu},\boldsymbol{r}) = \sum_{n=1}^{N} \sum_{k=1}^{K} r_{nk} \| \boldsymbol{x}_n - \boldsymbol{\mu}_k \|^2
 \]
 
-% disadvantages of K-means
+Los valores de \(r_{nk}\) y \(\boldsymbol{\mu}_{k}\) se pueden estimar utilizando un enfoque iterativo. El algoritmo \(K\)-means sigue los siguientes pasos:
+
+\begin{algorithm}[ht]
+\caption{\(K\)-means}
+\SetAlgoLined
+Seleccionar $K$ instancias como centroides iniciales $\boldsymbol{\mu}_k$\;
+\Repeat{Se cumpla algún criterio de convergencia}{
+    \For{$i \leftarrow 1, N$}{
+        Para cada $\boldsymbol{x}_n$, definir su vector $\boldsymbol{r}_n$ con los elementos $r_{nk}$:
+        $r_{nk} = 
+        \begin{cases}
+        1, & \text{si la distancia entre $\boldsymbol{x}_n$ y $\boldsymbol{\mu}_k$ es la menor} \\
+        0, & \text{en caso contrario.}
+        \end{cases}$
+    } 
+    Actualizar el valor de los centroides: $\displaystyle\boldsymbol{\mu}_k = \frac{\sum_{n=1}^{N} r_{nk}\boldsymbol{x}_n}{\sum_{n=1}^{N} r_{nk}}$\;
+}
+\end{algorithm}
+
+La función objetivo $J(\boldsymbol{\mu},\boldsymbol{r})$ actúa como una \textbf{función de distorsión} que cuantifica la suma total de distancias cuadradas entre los puntos de datos y sus centroides asignados. Es importante destacar que el algoritmo \(K\)-means puede interpretarse como un método de \textbf{descenso coordinado}, donde se alternan dos pasos: la actualización de las asignaciones $\boldsymbol{r}$ mientras se mantienen fijos los centroides $\boldsymbol{\mu}$, y la actualización de los centroides $\boldsymbol{\mu}$ mientras se mantienen fijas las asignaciones $\boldsymbol{r}$. Durante la ejecución del algoritmo, el valor de $J$ decrece monótonamente hasta alcanzar la convergencia; sin embargo, se debe tener en cuenta que $J$ es una \textbf{función no convexa}, lo que implica que K-means puede converger a un mínimo local en lugar del óptimo global. Para mitigar este problema, una estrategia práctica comúnmente empleada consiste en ejecutar el algoritmo varias veces con diferentes inicializaciones aleatorias de centroides y seleccionar la agrupación que presente el menor valor de distorsión $J(\boldsymbol{\mu},\boldsymbol{r})$.
 
 \subsection{Modelos de Mezcla Gaussiana (GMM)}
 
