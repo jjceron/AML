@@ -8,3 +8,14 @@ La reducción de dimensionalidad es una técnica utilizada en el aprendizaje aut
 
 \subsection{Análisis de Componentes Principales (PCA)}
 
+%% ...
+
+\subsection{Probabilistic PCA}
+
+PPCA is a linear-Gaussian latent variable model in which all marginal and conditional distributions are Gaussian. Latent variable prior:
+
+\[p(\boldsymbol{z})=\mathcal{N}(\boldsymbol{z}|\boldsymbol{0},\boldsymbol{I})\]
+
+Conditional distribution of the observed variable \(x\in\mathbb{R}^D\) given the latent variable \(z\in\mathbb{R}^d\):
+
+\[p(\boldsymbol{x}|\boldsymbol{z})=\mathcal{N}(\boldsymbol{x}|\boldsymbol{Wz}+\boldsymbol{\mu},\sigma^2\boldsymbol{I})\]
