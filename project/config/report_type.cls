@@ -56,6 +56,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{ragged2e}
 \RequirePackage{etoolbox}
+% \RequirePackage{}
 \RequirePackage[spanish,es-noshorthands]{babel}
 
 \pagestyle{fancy}
